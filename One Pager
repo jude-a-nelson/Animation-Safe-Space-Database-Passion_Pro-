@@ -1,0 +1,62 @@
+# Animation Safe Space Database (ASSDB)
+
+## Project Summary
+
+The **Animation Safe Space Database (ASSDB)** is an interactive, educational database designed to help users identify and explore animated content appropriate for different audiences. While animation is often assumed to be child‑friendly, many animated films and series are created for teens and adults and may contain violence, sexual content, or mature themes. ASSDB addresses this misconception by clearly classifying animated content by age group, genre, purpose, and content warnings.
+
+## Problem Context
+
+Parents, educators, and casual viewers often struggle to determine whether an animated show or film is suitable for children. In many cases, animation that appears harmless can quickly transition into graphic or inappropriate material. This lack of clarity has historically led to public concern and the implementation of media rating systems.
+
+Despite these systems, information about animation studios, production styles, and content intent is often scattered across multiple platforms. ASSDB centralizes this information in one structured and searchable database.
+
+## Proposed Solution
+
+ASSDB is built as a **master–detail (one‑to‑many) relational database** using a 3‑tier architecture:
+
+* **Studios** act as the master entity
+* **Animations** act as the detail entity
+
+Each animation is categorized by:
+
+* Age group (e.g., All Ages, 7+, 16+, 18+)
+* Genre and animation type
+* Country of origin
+* Distribution platform (TV, streaming service, etc.)
+
+This structure allows users to quickly determine whether content is suitable for children, educational use, or mature audiences.
+
+## Key Features
+
+* Clear age‑group and content classification
+* Studio‑to‑animation relationships
+* Search and filtering by genre, age group, and animation type
+* User interaction features including:
+
+  * Comments
+  * Ratings (1–6 scale)
+  * Fan art uploads (moderated)
+  * Content reporting system
+* Safety‑focused moderation to flag or disable inappropriate content
+
+## Scope & Constraints
+
+For the current assignment scope:
+
+* User accounts and authentication are **not implemented**
+* Comments and ratings are anonymous
+* Independent artist uploads are planned for a future phase
+
+## Educational Purpose
+
+This project demonstrates:
+
+* Relational database design principles
+* One‑to‑many (master–detail) relationships
+* RESTful API integration
+* Data classification and content safety considerations
+* Scalable system design with future expansion in mind
+
+## Conclusion
+
+The Animation Safe Space Database provides a structured, safety‑focused approach to discovering animated content. By combining accurate classification with relational data modeling, ASSDB helps users of all ages make informed viewing decisions while serving as a strong academic demonstration of database and API design principles.
