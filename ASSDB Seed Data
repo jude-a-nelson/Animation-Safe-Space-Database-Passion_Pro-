@@ -1,0 +1,65 @@
+Studios(Master Table)
+
+INSERT INTO studios (
+    studio_id, name, creator, founded_year, country, main_genre
+) VALUES
+(1, 'Studio Ghibli', 'Hayao Miyazaki', 1985, 'Japan', 'Fantasy'),
+(2, 'Cartoon Network Studios', 'Betty Cohen', 1994, 'United States', 'Comedy'),
+(3, 'MAPPA', 'Masao Maruyama', 2011, 'Japan', 'Action'),
+(4, 'Pixar Animation Studios', 'Ed Catmull', 1986, 'United States', 'Family');
+
+
+Animations(Details Table)
+
+INSERT INTO animations (
+    animation_id, title, release_year, genre, age_group,
+    animation_type, platform, studio_id
+) VALUES
+(1, 'Spirited Away', 2001, 'Fantasy', '8+', 'Hand-Drawn', 'HBO Max', 1),
+(2, 'My Neighbor Totoro', 1988, 'Fantasy', 'All Ages', 'Hand-Drawn', 'Netflix', 1),
+(3, 'Adventure Time', 2010, 'Comedy', '7+', 'Digital 2D', 'Hulu', 2),
+(4, 'South Park', 1997, 'Satire', '18+', 'Cutout Animation', 'Paramount+', 2),
+(5, 'Attack on Titan', 2013, 'Action', '16+', 'Digital 2D', 'Crunchyroll', 3),
+(6, 'Finding Nemo', 2003, 'Adventure', 'All Ages', '3D CGI', 'Disney+', 4);
+
+
+Comments(User Interaction Featuer)
+
+INSERT INTO comments (
+    comment_id, content, is_flagged, animation_id
+) VALUES
+(1, 'Beautiful animation and story. Great for kids.', false, 1),
+(2, 'This show looks cute but gets very intense later.', false, 5),
+(3, 'Definitely NOT for children.', false, 4);
+
+
+Ratings(Simplafied, Animation Only)
+
+INSERT INTO ratings (
+    rating_id, score, animation_id
+) VALUES
+(1, 6, 1),
+(2, 5, 2),
+(3, 4, 3),
+(4, 6, 6),
+(5, 2, 4);
+SELECT animation_id, AVG(score) FROM ratings GROUP BY animation_id;
+
+
+Fan Art(Future-Facing, but Seeded)
+
+INSERT INTO fanart (
+    fanart_id, image_url, is_approved, animation_id
+) VALUES
+(1, 'https://example.com/totoro_fanart.png', true, 2),
+(2, 'https://example.com/aot_fanart.png', false, 5);
+
+
+Reports(Safty System)
+
+INSERT INTO reports (
+    report_id, reason, status, content_type, content_id
+) VALUES
+(1, 'Inappropriate language', 'Pending', 'Comment', 3),
+(2, 'Graphic imagery', 'Reviewed', 'FanArt', 2);
+
